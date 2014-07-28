@@ -15,7 +15,7 @@ RUN apt-get install -y openssh-server supervisor vim
 RUN mkdir -p /var/run/sshd 
 RUN echo 'root:root' |chpasswd
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD supervisord/sshd.conf /etc/supervisor/conf.d/sshd.conf
 
 EXPOSE 22
 
