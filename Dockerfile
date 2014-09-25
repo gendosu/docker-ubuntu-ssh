@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM     ubuntu:12.04
+FROM     ubuntu:latest
 MAINTAINER Gen Takahashi "gendosu@gmail.com"
 
 # make sure the package repository is up to date
