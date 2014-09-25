@@ -14,6 +14,7 @@ RUN apt-get update
 RUN apt-get install -y openssh-server supervisor vim
 RUN mkdir -p /var/run/sshd 
 RUN echo 'root:root' |chpasswd
+RUN sed -ibak -e "s/^PermitRootLogin.*$/PermitRootLogin yes/" sshd_config
 
 ADD supervisord/sshd.conf /etc/supervisor/conf.d/sshd.conf
 
