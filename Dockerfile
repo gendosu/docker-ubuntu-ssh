@@ -11,7 +11,7 @@ MAINTAINER Gen Takahashi "gendosu@gmail.com"
 
 RUN apt-get update
 
-RUN apt-get install -y openssh-server supervisor vim build-essential
+RUN apt-get install -y openssh-server supervisor vim build-essential git
 RUN mkdir -p /var/run/sshd 
 RUN sed -ibak -e "s/^PermitRootLogin.*$/PermitRootLogin yes/" /etc/ssh/sshd_config
 ADD supervisord/sshd.conf /etc/supervisor/conf.d/sshd.conf
