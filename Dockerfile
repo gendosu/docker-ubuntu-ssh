@@ -2,9 +2,11 @@
 #
 # VERSION               0.0.1
 
-FROM     gendosu/ubuntu-base:latest
+FROM     gendosu/ubuntu-base:12.04
 
-MAINTAINER Gen Takahashi "gendosu@gmail.com"
+# make sure the package repository is up to date
+#RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN sed -i".back" -e 's/\/\/archive.ubuntu.com/\/\/ftp.jaist.ac.jp\/pub\/Linux/g' /etc/apt/sources.list
 
 RUN apt-get update \
 &&  apt-get install -y \
@@ -15,8 +17,7 @@ RUN apt-get update \
     git \
 &&  apt-get clean \
 &&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
-&&  mkdir -p /var/run/sshd \
-&&  sed -ibak -e "s/^PermitRootLogin.*$/PermitRootLogin yes/" /etc/ssh/sshd_config
+&&  mkdir -p /var/run/sshd
 
 ADD supervisord/sshd.conf /etc/supervisor/conf.d/sshd.conf
 
