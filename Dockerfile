@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM     gendosu/ubuntu-base:latest
+FROM     gendosu/ubuntu-base:15.10
 
 MAINTAINER Gen Takahashi "gendosu@gmail.com"
 
@@ -25,4 +25,3 @@ RUN echo 'root:root' |chpasswd
 EXPOSE 22
 
 CMD ["/usr/bin/supervisord"]
-
