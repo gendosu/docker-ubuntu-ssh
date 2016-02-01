@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM     gendosu/ubuntu-base:latest
+FROM     gendosu/ubuntu-base:14.04.1
 
 MAINTAINER Gen Takahashi "gendosu@gmail.com"
 
