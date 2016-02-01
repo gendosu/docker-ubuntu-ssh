@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM     ubuntu:14.04.1
+FROM     ubuntu:latest
 MAINTAINER Gen Takahashi "gendosu@gmail.com"
 
 RUN apt-get update
